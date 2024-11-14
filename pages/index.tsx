@@ -88,7 +88,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-span-6 border-r-[1px] border-l-[1px] border-gray-600">
+        <div className="col-span-6 border-r-[1px] border-l-[1px] border-gray-600 h-screen overflow-scroll">
           <FeedCard/>
           <FeedCard/>
           <FeedCard/>
