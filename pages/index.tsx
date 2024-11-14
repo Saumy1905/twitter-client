@@ -7,10 +7,12 @@ import { HiOutlineBell } from "react-icons/hi2";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { FaRegBookmark } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
+import { CiCircleMore } from "react-icons/ci";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] })
+import FeedCard from "@/components/FeedCard";
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -52,25 +54,29 @@ const sidebarMenuItems: TwitterSidebarButton[] = [
   {
     title: 'Profile',
     icon: <CiUser />
+  },
+  {
+    title: 'More',
+    icon: <CiCircleMore />
   }
 ]
 
 export default function Home() {
   return (
-    <div className="inter.className">
+    <div>
       <div className="grid grid-cols-12 h-screen w-screen px-56">
-        <div className="col-span-3 pt-8 px-4">
-          <div className="text-4xl h-fit w-fit hover:bg-gray-800 rounded-full p-4 cursor-pointer transition-all">
+        <div className="col-span-3 pt-1">
+          <div className="text-3xl h-fit w-fit hover:bg-gray-800 rounded-full p-4 cursor-pointer transition-all">
             <BsTwitterX />
           </div>
           <div className="mt-4 text-xl pr-4">
             <ul>
               {sidebarMenuItems.map(item => (
                 <li
-                  className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full px-3 py-2 w-fit cursor-pointer mt-2"
+                  className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full px-3 py-1 w-fit cursor-pointer mt-2"
                   key={item.title}
                 >
-                  <span>{item.icon}</span>
+                  <span className="text-2xl">{item.icon}</span>
                   <span>{item.title}</span>
                 </li>
               ))}
@@ -82,7 +88,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-span-6 border-r-[1px] border-l-[1px] border-gray-400"></div>
+        <div className="col-span-6 border-r-[1px] border-l-[1px] border-gray-600">
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+        </div>
         <div className="col-span-3"></div>
       </div>
     </div>
