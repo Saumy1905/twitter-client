@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Image from "next/image";
 import { BsTwitterX } from "react-icons/bs";
 import { GoHome } from "react-icons/go";
@@ -8,6 +8,7 @@ import { FaRegEnvelope } from "react-icons/fa6";
 import { FaRegBookmark } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
 import { CiCircleMore } from "react-icons/ci";
+import { CredentialResponse, GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google'
 import localFont from "next/font/local";
 
 import FeedCard from "@/components/FeedCard";
@@ -62,6 +63,13 @@ const sidebarMenuItems: TwitterSidebarButton[] = [
 ]
 
 export default function Home() {
+
+  {/****************************/}
+
+  {/*const handleLoginWithGoogle = useCallback((cred: CredentialResponse) => {}, [])*/}
+  
+  {/****************************/}
+
   return (
     <div>
       <div className="grid grid-cols-12 h-screen w-screen px-56">
@@ -89,17 +97,25 @@ export default function Home() {
           </div>
         </div>
         <div className="col-span-6 border-r-[1px] border-l-[1px] border-gray-600 h-screen overflow-scroll">
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
-          <FeedCard/>
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
         </div>
         <div className="col-span-3"></div>
+        {/****************************/}
+
+        {/* <div className="p-5 bg-slate-700 rounded-lg">
+          <h1 className="my-2 text-2xl">New to X?</h1>
+          < GoogleLogin onSuccess={(cred) => console.log(cred)} />
+        </div> */}
+
+        {/****************************/}
       </div>
     </div>
   )
